@@ -29,3 +29,34 @@ documentation : [absolute imports and aliases](https://nextjs.org/blog/next-9-4#
 }
 
 ```
+
+## Installation de prettier
+
+```bash
+npm i -D prettier
+```
+
+### Installation de eslint-config-prettier
+
+```bash
+npm i -D eslint-config-prettier
+```
+
+update .eslinrc in extends with
+
+```json
+{
+  "extends": ["next/core-web-vitals", "prettier"]
+}
+```
+
+Ajout du fichier .prettierrc à la racine
+
+```json
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 150,
+  "arrowParens": "avoid"
+}
+```
