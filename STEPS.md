@@ -60,3 +60,21 @@ Ajout du fichier .prettierrc à la racine
   "arrowParens": "avoid"
 }
 ```
+
+## Installation de husky
+
+```bash
+npx husky-init
+```
+
+Ajout des scripts suivants dans le package.json :
+
+```json
+  "check-types": "tsc --pretty --noEmit",
+  "check-format": "prettier --check .",
+  "check-link": "eslint . --ext ts --ext tsx --ext js",
+  "format": "prettier --write .",
+  "check-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"'
+```
+
+Ajout des messages dans le fichier .husky/pre-commit
