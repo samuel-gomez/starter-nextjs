@@ -209,3 +209,32 @@ Et niveau de couverture exigé à 100%
    },
 }
 ```
+
+## commitlint et lint-staged
+
+- commitlint : vérifie le bon format du nom de la commit
+- lint-staged : permet d'exécuter les linters sur fichiers en git staged
+
+```bash
+npm install --save-dev @commitlint/{config-conventional,cli}
+```
+
+### Ajouter la config au package.json
+
+```json
+"commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+```
+
+### Ajout du hook pour husky
+
+```bash
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```
+
+```bash
+npm i -D lint-staged
+```
