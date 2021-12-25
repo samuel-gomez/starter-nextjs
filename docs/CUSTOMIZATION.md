@@ -91,9 +91,7 @@ npm install --save-dev jest babel-jest @testing-library/react @testing-library/j
 
 Suivre la configuration du blog de Jarrod Watts
 
-### Quelques adaptations
-
-#### absolute import bug
+### absolute import bug
 
 L'import de composant en absolue pose problème à Jest lors de l'exécution du test (cf exp)
 
@@ -107,10 +105,11 @@ Dans le fichier jest.config.js :
 }
 ```
 
-#### Garder les fichiers de tests près du code
+### Garder les fichiers de tests près du code
 
 Le système de route de Nextjs utilise les répertoires.
-Lorsque l'on builde le site, et que l'on met des dossiers '**tests**' pour nos tests, Nextjs va les considérer comme des pages.
+Lorsque l'on builde le site, et que l'on met des dossiers '\_\_tests\_\_' pour nos tests, Nextjs va les considérer comme des pages.
+
 Une solution "officielle" consiste à préfixer ses pages avec des '.page.tsx' à l'aide du paramètre "pageExtensions" : https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions
 
 Sur cette stack, la solution retenue est de ne builder uniquement les fichiers 'ts' ou 'tsx' et d'écrire les tests en Javascript
@@ -151,3 +150,33 @@ npm run test ||
     false;
 )
 ```
+
+## Utilisation de commitizen
+
+Commitizen permet de créer un commit appliquant les Conventional Commits.
+
+### Installation
+
+```bash
+npm install --save-dev commitizen
+```
+
+```bash
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+```
+
+### Utilisation
+
+```bash
+git cz
+```
+
+ou juste
+
+```bash
+cz
+```
+
+Il suffit ensuite de suivre l'assistant :
+
+![commitizen](./img/commitizen-prompt.jpg)
