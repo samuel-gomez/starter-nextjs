@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import variables from './variables.module.scss';
-import Button from 'components/button';
+import styles from 'shared/styles/Home.module.scss';
+import variables from 'shared/styles/variables.module.scss';
+import Button from 'shared/components/button';
 
 const Home: NextPage = () => {
   return (
