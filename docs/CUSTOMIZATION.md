@@ -180,3 +180,32 @@ cz
 Il suffit ensuite de suivre l'assistant :
 
 ![commitizen](./img/commitizen-prompt.jpg)
+
+## Coverage
+
+Restriction du coverage au dossier /pages et /shared
+
+Fichier jest.config.js
+
+```javascript
+{
+  ...,
+   collectCoverageFrom: ['<rootDir>/pages/**/*.{js,jsx,ts,tsx}', '<rootDir>/shared/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  ...,
+}
+```
+
+Et niveau de couverture exigé à 100%
+
+```javascript
+{
+  coverageThreshold: {
+     global: {
+       branches: 100,
+       functions: 100,
+       lines: 100,
+       statements: 100,
+     },
+   },
+}
+```
