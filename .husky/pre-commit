@@ -3,6 +3,13 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
+# Check units tests (Jest & React Testing)
+npm run test ||
+(
+    echo '❌ Units Tests Check Failed. Run npm run test, add changes and try commit again.';
+    false;
+)
+
 # Check Prettier standards
 npm run check-format ||
 (
