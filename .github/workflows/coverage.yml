@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    needs: [build]
+  coverage:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
