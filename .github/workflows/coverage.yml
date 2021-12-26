@@ -6,17 +6,14 @@ on:
   pull_request:
     branches: [main]
   workflow_run:
-    workflows: ['Build']
+    workflows: ['Build', build]
     branches: [main]
-    types:
-      - completed
-
-  workflow_dispatch:
+    types: [completed]
 
 jobs:
-  coverage:
+  on-success:
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
       - name: Codecov
