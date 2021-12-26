@@ -235,6 +235,36 @@ npm install --save-dev @commitlint/{config-conventional,cli}
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
 
+## lint-staged
+
+On utilise lint-staged pour que seuls les ajouts et modifications soient analysés et reformatés
+On ne souhaite analyser que le travail stagé (ajouté avec git add ... mais pas encore commité)
+lint-staged permet d'exécuter vos outils de formatage et d'analyse syntaxiques sur les fichiers demandés
+
+### Installation
+
 ```bash
 npm i -D lint-staged
+```
+
+### update package.json with config
+
+```json
+ "lint-staged": {
+    "*.{scss, json, md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx,js}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+```
+
+### Ajout à husky
+
+```bash
+npx husky add .husky/pre-commit "npx --no-install lint-staged"
 ```

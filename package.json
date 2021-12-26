@@ -12,8 +12,7 @@
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check pages shared",
     "check-lint": "eslint pages shared --ext ts --ext tsx --ext js",
-    "format": "prettier --write pages shared",
-    "check": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "next": "~12.0.7",
@@ -36,6 +35,7 @@
     "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.45.1",
@@ -49,6 +49,17 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{scss,json,md}": [
+      "npm run format",
+      "git add ."
+    ],
+    "*.{ts,tsx,js}": [
+      "eslint --fix",
+      "npm run format",
+      "git add ."
     ]
   }
 }

@@ -1,6 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+npx --no-install lint-staged
+
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 # Check units tests (Jest & React Testing)
@@ -43,3 +45,4 @@ npm run build ||
 
 # If everything passes... Now we can commit
 echo '✅ You win this time... I am committing this now.'
+
