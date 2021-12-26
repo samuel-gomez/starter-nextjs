@@ -5,12 +5,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_run:
+    workflows: ['Build']
+    branches: [main]
+    types:
+      - completed
+      - requested
 
   workflow_dispatch:
 
 jobs:
   coverage:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
