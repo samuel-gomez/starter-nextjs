@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
   workflow_run:
-    workflows: ['Build', build]
+    workflows: ['Build']
     branches: [main]
     types: [completed]
 
@@ -20,4 +20,5 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/lcov-report/
           flags: unittests
