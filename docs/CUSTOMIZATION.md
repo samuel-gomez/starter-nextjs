@@ -210,10 +210,9 @@ Et niveau de couverture exigé à 100%
 }
 ```
 
-## commitlint et lint-staged
+## commitlint
 
-- commitlint : vérifie le bon format du nom de la commit
-- lint-staged : permet d'exécuter les linters sur fichiers en git staged
+commitlint : vérifie le bon format du nom de la commit
 
 ```bash
 npm install --save-dev @commitlint/{config-conventional,cli}
@@ -223,8 +222,8 @@ npm install --save-dev @commitlint/{config-conventional,cli}
 
 ```json
 "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
+  "extends": [
+    "@commitlint/config-conventional"
     ]
   }
 ```
@@ -238,7 +237,9 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ## lint-staged
 
 On utilise lint-staged pour que seuls les ajouts et modifications soient analysés et reformatés
+
 On ne souhaite analyser que le travail stagé (ajouté avec git add ... mais pas encore commité)
+
 lint-staged permet d'exécuter vos outils de formatage et d'analyse syntaxiques sur les fichiers demandés
 
 ### Installation
