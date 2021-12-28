@@ -1,6 +1,6 @@
 // source : https://blog.jarrodwatts.com/how-to-set-up-nextjs-with-jest-react-testing-library-and-playwright
 module.exports = {
-  collectCoverageFrom: ['<rootDir>/pages/**/*.{js,jsx,ts,tsx}', '<rootDir>/shared/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -27,5 +27,5 @@ module.exports = {
   },
   transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleDirectories: ['node_modules', '.'],
+  moduleDirectories: ['node_modules', 'src'],
 };

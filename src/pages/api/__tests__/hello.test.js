@@ -1,4 +1,4 @@
-import handler from '../hello';
+import handler from '../hello.page';
 
 const json = jest.fn();
 

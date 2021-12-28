@@ -24,7 +24,7 @@ documentation : [absolute imports and aliases](https://nextjs.org/blog/next-9-4#
 // tsconfig.json or tsconfig.json
 {
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": "src"
   }
 }
 
@@ -73,8 +73,8 @@ Ajout des scripts suivants dans le package.json :
   "check-types": "tsc --pretty --noEmit",
   "check-format": "prettier --check .",
   "check-link": "eslint . --ext ts --ext tsx --ext js",
-  "format": "prettier --write .",
   "check-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"'
+  "format": "prettier --write .",
 ```
 
 Ajout des messages dans le fichier .husky/pre-commit
@@ -101,25 +101,23 @@ Dans le fichier jest.config.js :
 ```javascript
 {
   ...,
-  moduleDirectories: ['node_modules', '.'],
+  moduleDirectories: ['node_modules', 'src'],
 }
 ```
 
 ### Garder les fichiers de tests près du code
 
-Le système de route de Nextjs utilise les répertoires.
+Le système de route de Nextjs utilise le système de fichier.
 Lorsque l'on builde le site, et que l'on met des dossiers '\_\_tests\_\_' pour nos tests, Nextjs va les considérer comme des pages.
 
-Une solution "officielle" consiste à préfixer ses pages avec des '.page.tsx' à l'aide du paramètre "pageExtensions" : https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions
-
-Sur cette stack, la solution retenue est de ne builder uniquement les fichiers 'ts' ou 'tsx' et d'écrire les tests en Javascript
+Une solution officielle consiste à préfixer ses pages avec des '.page.tsx' à l'aide du paramètre "pageExtensions" : https://nextjs.org/docs/api-reference/next.config.js/custom-page-extensions
 
 Dans le fichier next.config.js :
 
 ```javascript
 {
   ...,
-  pageExtensions: ['tsx', 'ts'],
+  pageExtensions: ['page.tsx', 'page.ts'],
 }
 
 ```
@@ -190,7 +188,7 @@ Fichier jest.config.js
 ```javascript
 {
   ...,
-   collectCoverageFrom: ['<rootDir>/pages/**/*.{js,jsx,ts,tsx}', '<rootDir>/shared/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+   collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
   ...,
 }
 ```

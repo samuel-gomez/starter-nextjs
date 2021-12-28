@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  pageExtensions: ['tsx', 'ts'],
+  pageExtensions: ['page.tsx', 'page.ts'],
 };

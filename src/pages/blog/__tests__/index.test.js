@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Blog from '../index';
+import Blog from '../index.page';
 
 describe('Blog', () => {
   it('renders a heading', () => {

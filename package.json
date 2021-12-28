@@ -10,8 +10,9 @@
     "lint": "next lint",
     "prepare": "husky install",
     "check-types": "tsc --pretty --noEmit",
-    "check-format": "prettier --check pages shared",
-    "check-lint": "eslint pages shared --ext ts --ext tsx --ext js",
+    "check-format": "prettier --check src",
+    "check-lint": "eslint src --ext ts --ext tsx --ext js",
+    "check": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "format": "prettier --write ."
   },
   "dependencies": {
