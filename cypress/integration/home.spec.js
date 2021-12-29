@@ -2,7 +2,7 @@
 
 context('Home page', () => {
   beforeEach(() => {
-    cy.visit('/').wait(5000);
+    cy.visit('/');
   });
 
   it('Should find our welcome page and message', () => {

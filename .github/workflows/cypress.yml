@@ -15,6 +15,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
+          start: npm run start
+          wait-on: http://localhost:3000
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -32,6 +35,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
+          start: npm run start
+          wait-on: http://localhost:3000
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

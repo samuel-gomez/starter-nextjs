@@ -1,4 +1,4 @@
 {
-  "baseUrl": "https://starter-nextjs.samuelgomez.fr",
+  "baseUrl": "http://localhost:3000",
   "projectId": "khkh2z"
 }
