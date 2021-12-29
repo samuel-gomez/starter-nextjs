@@ -270,6 +270,8 @@ npx husky add .husky/pre-commit "npx --no-install lint-staged"
 
 ## Cypress
 
+doc: https://docs.cypress.io/guides/overview/why-cypress
+
 ### Installation
 
 ```bash
@@ -292,6 +294,9 @@ Un projetId est fourni ainsi qu'une commande d'enregistrement.
 
 ![cypress-key-project](./img/key-project-cypress.jpg)
 
+https://dashboard.cypress.io/projects/khkh2z
+
 ### Github Actions & Cypress
 
-https://www.youtube.com/watch?v=USX6AntcPyg&list=PL8GlT7H3xOcLJMIPhxlZ8W9kgbeMqW7cH
+Tuto : https://www.youtube.com/watch?v=USX6AntcPyg&list=PL8GlT7H3xOcLJMIPhxlZ8W9kgbeMqW7cH
+Exemples : https://github.com/cypress-io/github-action

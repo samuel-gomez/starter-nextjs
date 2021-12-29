@@ -22,10 +22,11 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print Dashboard URL
-        run: |
-          echo Cypress finished with: ${{ steps.cypress.outcome }}
-          echo See results at ${{ steps.cypress.outputs.dashboardUrl }}
+      - uses: actions/upload-artifact@v1
+        if: always() # / if: failure() <- more suitable for production
+        with:
+          name: cypress-videos
+          path: cypress/videos
 
   windows-run:
     runs-on: windows-latest
@@ -42,7 +43,8 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print Dashboard URL
-        run: |
-          echo Cypress finished with: ${{ steps.cypress.outcome }}
-          echo See results at ${{ steps.cypress.outputs.dashboardUrl }}
+      - uses: actions/upload-artifact@v1
+        if: always() # / if: failure() <- more suitable for production
+        with:
+          name: cypress-videos
+          path: cypress/videos
