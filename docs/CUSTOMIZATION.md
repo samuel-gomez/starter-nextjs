@@ -300,3 +300,37 @@ https://dashboard.cypress.io/projects/khkh2z
 
 Tuto : https://www.youtube.com/watch?v=USX6AntcPyg&list=PL8GlT7H3xOcLJMIPhxlZ8W9kgbeMqW7cH
 Exemples : https://github.com/cypress-io/github-action
+
+## Sonar
+
+### properties
+
+Création du fichier sonar-project.properties
+
+```bash
+# Required metadata
+sonar.projectKey=samuel-gomez_starter-nextjs
+sonar.projectName=gomez_starter-nextjs
+sonar.projectVersion=$(PROJECT_VERSION)
+sonar.sourceEncoding=UTF-8
+sonar.exclusions=**/node_modules/**,**/coverage/**,**/*test.js,**/*steps.js,**/*spec.js,src/*.js,**/*stories.js,**/constants.js
+sonar.sources=src/
+sonar.language=js,ts
+sonar.javascript.lcov.reportPaths=coverage/lcov.info
+sonar.cpd.exclusions=**/*test.js,**/*steps.js,**/*spec
+sonar.testExecutionReportPaths=test-report.xml
+```
+
+### Installation de jest-sonar-reporter
+
+```bash
+npm i jest-sonar-reporter -D
+```
+
+Ajouter au jest.config.js
+
+```json
+{
+  "testResultsProcessor": "jest-sonar-reporter"
+}
+```

@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "sonarlint.connectedMode.project": {
+      "connectionId": "SonarCloud",
+      "projectKey": "samuel-gomez_starter-nextjs"
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#8a0202",
+      "titleBar.activeBackground": "#8a0202",
+      "titleBar.activeForeground": "#E8FEFF"
+    }
+  }
+}
