@@ -7,8 +7,29 @@ on:
     branches: [main]
 
 jobs:
-  cypress-run:
+  ubuntu-run:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        id: cypress
+        continue-on-error: true
+        with:
+          build: npx cypress info
+          record: true
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print Dashboard URL
+        run: |
+          echo Cypress finished with: ${{ steps.cypress.outcome }}
+          echo See results at ${{ steps.cypress.outputs.dashboardUrl }}
+
+  windows-run:
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
