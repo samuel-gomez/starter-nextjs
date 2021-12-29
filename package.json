@@ -13,7 +13,9 @@
     "check-format": "prettier --check src",
     "check-lint": "eslint src --ext ts --ext tsx --ext js",
     "check": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cy": "cypress open",
+    "cyr": "cypress run"
   },
   "dependencies": {
     "next": "~12.0.7",
@@ -29,6 +31,7 @@
     "@types/react": "^17.0.37",
     "babel-jest": "^27.4.5",
     "commitizen": "^4.2.4",
+    "cypress": "^9.2.0",
     "cz-conventional-changelog": "^3.0.1",
     "eslint": "^8.4.1",
     "eslint-config-next": "^12.0.7",

@@ -267,3 +267,31 @@ npm i -D lint-staged
 ```bash
 npx husky add .husky/pre-commit "npx --no-install lint-staged"
 ```
+
+## Cypress
+
+### Installation
+
+```bash
+npm i -D cypress
+```
+
+### add script
+
+```json
+{
+  "cy": "cypress open",
+  "cyr": "cypress run"
+}
+```
+
+### Création de l'organisation
+
+Il faut se connecter au dashboard Cypress via un provider (ex: github) puis créer une organisation et un projet.
+Un projetId est fourni ainsi qu'une commande d'enregistrement.
+
+![cypress-key-project](./img/key-project-cypress.jpg)
+
+### Github Actions & Cypress
+
+https://www.youtube.com/watch?v=USX6AntcPyg&list=PL8GlT7H3xOcLJMIPhxlZ8W9kgbeMqW7cH
