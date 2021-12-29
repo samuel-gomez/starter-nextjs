@@ -1,8 +1,8 @@
 [![Build](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/build.yml/badge.svg)](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/build.yml)
-
 [![codecov](https://codecov.io/gh/samuel-gomez/starter-nextjs/branch/main/graph/badge.svg)](https://codecov.io/gh/samuel-gomez/starter-nextjs)
-
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![CodeQL](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/codeql-analysis.yml)
+[![Cypress](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/cypress.yml/badge.svg)](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/cypress.yml)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
