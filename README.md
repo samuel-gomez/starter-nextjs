@@ -1,3 +1,5 @@
+[![GitHub issues](https://img.shields.io/github/issues/samuel-gomez/starter-nextjs)](https://github.com/samuel-gomez/starter-nextjs/issues)
+[![GitHub license](https://img.shields.io/github/license/samuel-gomez/starter-nextjs)](https://github.com/samuel-gomez/starter-nextjs/blob/main/LICENSE)
 [![Build](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/build.yml/badge.svg)](https://github.com/samuel-gomez/starter-nextjs/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/samuel-gomez/starter-nextjs/branch/main/graph/badge.svg)](https://codecov.io/gh/samuel-gomez/starter-nextjs)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
