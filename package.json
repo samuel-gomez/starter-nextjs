@@ -18,9 +18,11 @@
     "cyr": "cypress run"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.1.2"
   },
   "devDependencies": {
     "@commitlint/cli": "16.0.2",
@@ -41,10 +43,12 @@
     "jest": "27.4.7",
     "jest-sonar-reporter": "2.0.0",
     "lint-staged": "12.1.7",
+    "msw": "^0.36.4",
     "prettier": "2.5.1",
     "react-test-renderer": "17.0.2",
     "sass": "1.48.0",
-    "typescript": "4.5.4"
+    "typescript": "4.5.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "config": {
     "commitizen": {
