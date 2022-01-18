@@ -334,3 +334,45 @@ Ajouter au jest.config.js
   "testResultsProcessor": "jest-sonar-reporter"
 }
 ```
+
+## Mise en place de MSW (Mock Web Services)
+
+Permet de simuler les appels réseaux lors des tests
+
+### Installation de msw
+
+```bash
+npm i msw -D
+```
+
+### Installation d'un polyfill de fetch (pour node)
+
+Ce polyfill est nécessaire pour simuler l'appel réseau lors des tests
+
+```bash
+npm i whatwg-fetch -D
+```
+
+> Il existe d'autres librairies que celle utilisée ici
+
+### Paramétrage de msw
+
+1 - Ajout de mock dans le dossier **mocks**/mocks.ts
+2 - Création du fichier server-handlers.ts pour lister les requêtes à intercepter et envoyer les mocks
+3 - Création du server.ts avec setupServer pour le mode server des tests
+4 - Ajout de la configuration globale pour Jest (jest.setup.js):
+
+```javascript
+import 'whatwg-fetch';
+import { server } from './test-utils/server';
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+```
+
+## Mise en place d'utilitaire pour les appels fetch
+
+### Installation de SWR
+
+React hook for Data Fetching
