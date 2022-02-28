@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "axios": "0.26.0",
-    "next": "12.0.10",
+    "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "1.2.1"
@@ -36,7 +36,7 @@
     "cypress": "9.5.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10",
+    "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "8.3.0",
     "husky": "7.0.4",
     "identity-obj-proxy": "3.0.0",
