@@ -13,7 +13,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 https://starter-nextjs.samuelgomez.fr/
 
-
 ## Getting Started
 
 First, run the development server:
