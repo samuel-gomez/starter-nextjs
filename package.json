@@ -14,8 +14,8 @@
     "check-lint": "eslint src --ext ts --ext tsx --ext js",
     "check": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "format": "prettier --write .",
-    "cy": "cypress open --config-file=cypress.config.ts",
-    "cyr": "cypress run --config-file=cypress.config.ts"
+    "cy": "cypress open",
+    "cyr": "cypress run"
   },
   "dependencies": {
     "axios": "0.27.2",

@@ -19,6 +19,7 @@ jobs:
           start: npm run start
           wait-on: http://localhost:3000
           record: true
+          config-file: cypress.config.ts
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,7 +41,7 @@ jobs:
           start: npm run start
           wait-on: http://localhost:3000
           record: true
-          config-file: tests/cypress.config.ts
+          config-file: cypress.config.ts
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
