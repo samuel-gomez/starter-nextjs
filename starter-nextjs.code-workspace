@@ -10,9 +10,9 @@
       "projectKey": "samuel-gomez_starter-nextjs"
     },
     "workbench.colorCustomizations": {
-      "activityBar.background": "#8a0202",
-      "titleBar.activeBackground": "#8a0202",
-      "titleBar.activeForeground": "#E8FEFF"
+      "activityBar.background": "#028a56",
+      "titleBar.activeBackground": "#028a36",
+      "titleBar.activeForeground": "#e8fff2"
     }
   }
 }
