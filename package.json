@@ -35,7 +35,7 @@
     "commitizen": "4.2.4",
     "cypress": "10.3.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.19.0",
+    "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "eslint-config-prettier": "8.5.0",
     "husky": "8.0.1",
