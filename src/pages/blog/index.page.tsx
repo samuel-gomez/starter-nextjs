@@ -1,5 +1,4 @@
 import type { GetStaticProps } from 'next';
-import { baseUrl } from 'pages/_app.page';
 import Posts, { PostsProps } from './Posts';
 
 export interface TPerson {
@@ -18,6 +17,9 @@ const Blog = ({ posts = [], person = {} }: PostsProps & TPerson) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const protocol = `http${process.env.NODE_ENV === 'production' ? '' : ''}://`;
+  const baseUrl = `${protocol}${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+  console.log('BASEURL', baseUrl);
   const resPerson = await fetch(`${baseUrl}/api/hello`);
   const person = await resPerson.json();
 
