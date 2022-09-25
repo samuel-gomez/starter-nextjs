@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next';
+import { baseUrl } from 'pages/_app.page';
 import Posts, { PostsProps } from './Posts';
 
 export interface TPerson {
@@ -17,7 +18,7 @@ const Blog = ({ posts = [], person = {} }: PostsProps & TPerson) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const resPerson = await fetch('http://localhost:3000/api/hello');
+  const resPerson = await fetch(`${baseUrl}/api/hello`);
   const person = await resPerson.json();
 
   const result = await fetch('https://jsonplaceholder.typicode.com/posts');
