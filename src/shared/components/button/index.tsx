@@ -4,9 +4,7 @@ const Button = () => {
   return (
     <div>
       <Link href="/blog">
-        <a className="hello">
-          <span>My blog</span>
-        </a>
+        <span>My blog</span>
       </Link>
     </div>
   );

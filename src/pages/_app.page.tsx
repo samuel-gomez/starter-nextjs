@@ -1,12 +1,11 @@
 import 'shared/styles/globals.scss';
 import type { AppProps } from 'next/app';
 
-export const baseUrl = (() => {
-  const protocol = `http${process.env.NODE_ENV === 'production' ? 's' : ''}://`;
-  return `${protocol}${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-})();
+type TMyApp = AppProps & {
+  baseUrl?: string;
+};
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL }: TMyApp) {
   return <Component {...pageProps} baseUrl={baseUrl} />;
 }
 

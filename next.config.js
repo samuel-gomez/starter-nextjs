@@ -2,4 +2,8 @@
 module.exports = {
   reactStrictMode: true,
   pageExtensions: ['page.tsx', 'page.ts'],
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
 };

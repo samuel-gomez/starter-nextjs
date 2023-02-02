@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next';
+import { useEffect, useState } from 'react';
 import Posts, { PostsProps } from './Posts';
 
 export interface TPerson {
@@ -6,8 +7,17 @@ export interface TPerson {
     name?: string;
   };
 }
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL;
 
-const Blog = ({ posts = [], person = {} }: PostsProps & TPerson) => {
+const Blog = ({ posts = [] }: PostsProps) => {
+  const [person, setPerson] = useState({ name: 'vide' });
+
+  useEffect(() => {
+    fetch(`${baseUrl}/api/hello`)
+      .then(r => r.json())
+      .then(setPerson);
+  }, []);
+
   return (
     <div>
       <p>My blog {person?.name}</p>
@@ -17,19 +27,12 @@ const Blog = ({ posts = [], person = {} }: PostsProps & TPerson) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const protocol = `http${process.env.NODE_ENV === 'production' ? '' : ''}://`;
-  const baseUrl = `${protocol}${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-  console.log('BASEURL', baseUrl);
-  const resPerson = await fetch(`${baseUrl}/api/hello`);
-  const person = await resPerson.json();
-
   const result = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts = await result.json();
 
   return {
     props: {
       posts,
-      person,
     },
   };
 };
