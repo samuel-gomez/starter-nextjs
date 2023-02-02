@@ -7,7 +7,7 @@ const handlers = [
   rest.get('https://jsonplaceholder.typicode.com/posts', (_req, res, ctx) => {
     return res(ctx.json(mockedPosts));
   }),
-  rest.get(`${baseUrl}/api/hello`, (_req, res, ctx) => {
+  rest.get(`${baseUrl}api/hello`, (_req, res, ctx) => {
     return res(ctx.json({ name: 'John Doe' }));
   }),
 ];

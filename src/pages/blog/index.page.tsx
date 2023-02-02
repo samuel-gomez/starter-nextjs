@@ -13,7 +13,7 @@ const Blog = ({ posts = [] }: PostsProps) => {
   const [person, setPerson] = useState({ name: 'vide' });
 
   useEffect(() => {
-    fetch(`${baseUrl}/api/hello`)
+    fetch(`${baseUrl}api/hello`)
       .then(r => r.json())
       .then(setPerson);
   }, []);
